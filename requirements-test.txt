@@ -1,0 +1,9 @@
+pytest
+pytest-cov
+httpx
+fastapi[all]
+boto3
+joblib
+scikit-learn
+pandas
+numpy

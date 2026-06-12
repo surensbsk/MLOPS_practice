@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: streamlit-ui
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: streamlit-ui
+  template:
+    metadata:
+      labels:
+        app: streamlit-ui
+    spec:
+      containers:
+      - name: streamlit-ui
+        image: your-docker-image-name:latest
+        ports:
+        - containerPort: 8501
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+        env:
+        - name: STREAMLIT_SERVER_PORT
+          value: "8501"
+        - name: S3_BUCKET_NAME
+          value: "mlopsarp-bk1"
+        - name: S3_PREFIX
+          value: "mlops_practive"
+        - name: S3_URL
+          value: "s3://mlopsarp-bk1/mlops_practive/"
+        - name: AWS_DEFAULT_REGION
+          value: "us-east-1"

@@ -1,0 +1,20 @@
+Social_Network_Ads.csv is a raw data file typically containing user data for a social network advertising campaign. Below is a sample content for the Social_Network_Ads.csv file, which includes common fields that might be found in such a dataset.
+
+UserID,Gender,Age,EstimatedSalary,Purchased
+15624510,Male,19,19000,0
+15810944,Male,35,20000,0
+15675124,Female,26,43000,0
+15688414,Female,27,57000,0
+15712345,Male,19,76000,0
+15767890,Female,27,58000,0
+15812345,Male,35,120000,1
+15867890,Female,29,150000,1
+15912345,Male,30,90000,0
+15967890,Female,32,80000,1
+
+This dataset contains the following columns:
+- UserID: Unique identifier for each user.
+- Gender: Gender of the user (Male/Female).
+- Age: Age of the user.
+- EstimatedSalary: Estimated salary of the user.
+- Purchased: Indicates whether the user purchased the product (1 for yes, 0 for no).

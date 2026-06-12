@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    environment:
+      - ENV=production
+      - S3_BUCKET_NAME=mlopsarp-bk1
+      - S3_PREFIX=mlops_practive
+      - S3_URL=s3://mlopsarp-bk1/mlops_practive/
+      - AWS_DEFAULT_REGION=us-east-1
+
+  ui:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.ui
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./src:/app/src
+      - ./data:/app/data
+    environment:
+      - ENV=production
+      - S3_BUCKET_NAME=mlopsarp-bk1
+      - S3_PREFIX=mlops_practive
+      - S3_URL=s3://mlopsarp-bk1/mlops_practive/
+      - AWS_DEFAULT_REGION=us-east-1
+
+networks:
+  default:
+    driver: bridge
